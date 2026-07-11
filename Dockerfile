@@ -7,5 +7,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# أمر تشغيل البوت مع سيرفر ويب وهمي في نفس الوقت لمنع المنصة من إغلاقه
+# إخبار المنصة رسمياً بأننا نستخدم المنفذ 8080 لتتخطى الفحص
+EXPOSE 8080
+
+# تشغيل السيرفر الوهمي والبوت معاً
 CMD python -m http.server 8080 & python newfile.py
